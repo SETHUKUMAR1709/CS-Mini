@@ -1,0 +1,135 @@
+/* src/components/NavBar.css or integrated into src/App.css */
+
+/*
+   Make sure you have your global theme variables defined in index.css or App.css
+   as shown in the previous response for this CSS to work correctly with themes.
+*/
+
+.navbar {
+    background-color: var(--navbar-background); /* From theme variables */
+    color: var(--navbar-text-color);           /* From theme variables */
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+    position: sticky; /* Makes navbar stick to the top */
+    top: 0;
+    z-index: 1000; /* Ensures it stays above other content */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Smooth theme transitions */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center; /* Align brand text and theme toggle */
+}
+
+.navbar-brand a {
+    color: var(--navbar-text-color); /* From theme variables */
+    text-decoration: none;
+    font-size: 1.6em; /* Slightly larger for brand */
+    font-weight: 700; /* Bold */
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.navbar-brand a:hover {
+    color: var(--navbar-link-hover-color); /* From theme variables */
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3em; /* Icon size */
+    color: var(--theme-toggle-color); /* From theme variables */
+    margin-left: 20px; /* Space between brand and toggle */
+    padding: 5px; /* Make it easier to click */
+    border-radius: 50%; /* Make it round */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    display: flex; /* To center icon */
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    color: var(--navbar-link-hover-color); /* From theme variables */
+    background-color: rgba(0, 0, 0, 0.05); /* Subtle background on hover */
+}
+
+/* Links container */
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 25px; /* Consistent spacing between links */
+}
+
+.navbar-links a,
+.navbar-link-button { /* Apply styles to both links and the logout button */
+    color: var(--navbar-text-color); /* From theme variables */
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    position: relative; /* For underline effect */
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding: 5px 0; /* Add some vertical padding for hover area */
+}
+
+.navbar-links a:hover,
+.navbar-link-button:hover {
+    color: var(--navbar-link-hover-color); /* From theme variables */
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* Optional: Underline effect on hover */
+.navbar-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--navbar-link-hover-color);
+    transition: width 0.3s ease-in-out;
+}
+
+.navbar-links a:hover::after {
+    width: 100%;
+}
+
+/* Styling specifically for the Logout button to make it look like a link */
+.navbar-link-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    /* Font size and color inherited from .navbar-links a */
+    padding: 0; /* Reset button default padding */
+}
+
+/* Responsive adjustments (optional, but good practice) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    .navbar-brand {
+        width: 100%;
+        justify-content: space-between; /* Push toggle to the right */
+        margin-bottom: 10px;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 15px; /* Adjust spacing for vertical links */
+    }
+
+    .navbar-links a,
+    .navbar-link-button {
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
+    }
+}

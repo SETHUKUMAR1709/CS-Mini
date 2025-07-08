@@ -1,12 +1,12 @@
+import React from 'react';
 
-
-const CheckoutPage = () => {
+const SellPage = () => {
   return (
     <div>
-      <h1>Checkout Page</h1>
+      <h1>Sell Page</h1>
       <p>This is where the checkout process will be implemented.</p>
     </div>
   );
 }
 
-export default CheckoutPage;
+export default SellPage;

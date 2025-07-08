@@ -1,0 +1,151 @@
+/* Signup.module.css */
+
+.signupContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* Use variables for signup background gradient */
+    background: linear-gradient(135deg, var(--secondary-gradient-start) 0%, var(--secondary-gradient-end) 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.signupCard {
+    /* Use variables for background and shadow */
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.signupCard:hover {
+    transform: translateY(-5px);
+}
+
+.title {
+    font-size: 2.2em;
+    color: var(--text-color-primary); /* Use variable */
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: var(--text-color-secondary); /* Use variable */
+    margin-bottom: 30px;
+}
+
+.signupForm {
+    text-align: left;
+}
+
+.inputGroup {
+    margin-bottom: 20px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--label-color); /* Use variable */
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.input {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    border: 1px solid var(--input-border-color); /* Use variable */
+    border-radius: 8px;
+    font-size: 1em;
+    color: var(--text-color-primary); /* Use variable */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--secondary-gradient-start); /* Use start color of signup button gradient */
+    box-shadow: 0 0 0 3px var(--input-focus-shadow-signup); /* Use specific signup focus shadow */
+}
+
+.passwordInputWrapper {
+    position: relative;
+    width: 100%;
+}
+
+.passwordInputWrapper .input {
+    padding-right: 40px;
+}
+
+.passwordToggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--password-toggle-color); /* Use variable */
+    font-size: 0.9em;
+    transition: color 0.2s ease;
+    cursor: pointer; /* Ensure cursor is pointer here */
+}
+
+.passwordToggle:hover {
+    color: var(--text-color-primary); /* Use variable for hover */
+}
+
+.errorMessage {
+    color: var(--error-message-color); /* Use variable */
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.signupButton {
+    width: 100%;
+    padding: 14px;
+    /* Use variables for signup button gradient */
+    background: linear-gradient(45deg, var(--signup-button-background-start) 0%, var(--signup-button-background-end) 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.signupButton:hover {
+    /* Use variables for signup button hover gradient */
+    background: linear-gradient(45deg, var(--signup-button-hover-start) 0%, var(--signup-button-hover-end) 100%);
+    transform: translateY(-2px);
+}
+
+.signupButton:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.footerLinks {
+    margin-top: 30px;
+    font-size: 0.95em;
+    color: var(--text-color-secondary); /* Use variable */
+}
+
+.link {
+    color: var(--link-color-signup); /* Use specific signup link color variable */
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.link:hover {
+    color: var(--link-hover-color-signup); /* Use specific signup link hover variable */
+    text-decoration: underline;
+}
