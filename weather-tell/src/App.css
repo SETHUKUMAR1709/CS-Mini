@@ -1,0 +1,65 @@
+.App {
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  padding: 5% 10% 16% 10%;
+  border: hsl(0, 0%, 20%) 1px solid;
+  height: 100%;
+}
+
+.comp {
+  border: #333 1px solid;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.dark {
+  background-color: #333 !important;
+  color: hsl(0, 0%, 100%) !important;
+}
+
+td, th {
+  padding: 10px;
+  text-align: center;
+  border: 2px solid #222;
+  border-collapse: collapse;
+  font-size: large;
+}
+
+table.dark th,table.dark td{
+  border: 2px solid #fff !important;
+}
+
+td {
+  font-size: large;
+}
+
+table {
+  margin: 48px 1%;
+  padding : 10px;
+  width: 98%;
+}
+
+
+
+table.dark {
+  background-color: #444 !important;
+  color: #fff !important;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+
+.compdark {
+  border: #fff 1px solid !important;
+}
+
+.footer{padding: 20px;
+   text-align: center;
+    font-size: 0.8em
+  }
+
+.table {
+  width: 100%;
+  overflow-x: auto;
+  /* border-collapse: collapse; */
+}
