@@ -1,0 +1,45 @@
+/* src/components/SearchBar.module.css */
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--product-list-background); /* Uses theme variable */
+    border-bottom: 1px solid var(--input-border-color); /* Subtle border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Light shadow */
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.searchInput {
+    width: 100%;
+    max-width: 600px; /* Limit search bar width for aesthetics */
+    padding: 12px 20px;
+    border: 1px solid var(--input-border-color); /* Uses theme variable */
+    border-radius: 25px; /* Pill-shaped input */
+    font-size: 1.1em;
+    color: var(--text-color-primary); /* Uses theme variable */ /* Uses theme variable */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.searchInput::placeholder {
+    color: var(--text-color-secondary); /* Uses theme variable for placeholder */
+    opacity: 0.7;
+}
+
+.searchInput:focus {
+    outline: none;
+    border-color: var(--link-color-login); /* Highlight focus with primary accent color */
+    box-shadow: 0 0 0 3px var(--input-focus-shadow); /* Glow effect on focus */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .searchBar {
+        padding: 15px;
+    }
+    .searchInput {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+}

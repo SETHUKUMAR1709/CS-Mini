@@ -1,4 +1,5 @@
 import React from "react";
+import styles from './SearchBar.module.css'; // Import the CSS Module
 
 const SearchBar = ({ searchTerm, setSearchTerm }) => {
     const handleInputChange = (e) => {
@@ -6,9 +7,10 @@ const SearchBar = ({ searchTerm, setSearchTerm }) => {
     };
 
     return (
-        <div className="search-bar">
+        <div className={styles.searchBar}> {/* Apply the module class */}
             <input
                 type="text"
+                className={styles.searchInput} 
                 placeholder="Search for products..."
                 value={searchTerm}
                 onChange={handleInputChange}
@@ -16,3 +18,5 @@ const SearchBar = ({ searchTerm, setSearchTerm }) => {
         </div>
     );
 }
+
+export default SearchBar;

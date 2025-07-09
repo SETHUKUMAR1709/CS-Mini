@@ -1,0 +1,14 @@
+.product-list-container {
+     background-color: var(--product-list-background);
+     height: 100%; /* Full viewport height */
+}
+
+.product-grid{
+    background-color: var(--product-list-background); /* Use the variable for background color */
+    display: flex;
+    flex: row;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items horizontally */
+    gap: 20px; /* Space between product cards */
+    padding: 20px; /* Padding around the product list */
+}

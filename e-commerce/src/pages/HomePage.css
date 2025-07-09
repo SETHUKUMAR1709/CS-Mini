@@ -1,0 +1,4 @@
+.home-page {
+     background-color: var(--product-list-background);
+     height: 100%; /* Full viewport height */
+}

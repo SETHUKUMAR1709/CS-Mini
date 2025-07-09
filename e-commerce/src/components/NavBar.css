@@ -110,18 +110,18 @@
 /* Responsive adjustments (optional, but good practice) */
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
+        flex-direction: row;
         padding: 10px 20px;
     }
 
     .navbar-brand {
         width: 100%;
-        justify-content: space-between; /* Push toggle to the right */
+         /* Push toggle to the right */
         margin-bottom: 10px;
     }
 
     .navbar-links {
-        flex-direction: column;
+        flex-direction: row;
         width: 100%;
         gap: 15px; /* Adjust spacing for vertical links */
     }

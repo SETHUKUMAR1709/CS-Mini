@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        h1 {
+            color: #0056b3;
+            margin-bottom: 30px;
+        }
+        .image-container {
+            max-width: 800px;
+            width: 90%;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        img {
+            max-width: 100%; 
+            height: auto;
+            display: block;
+            border-radius: 5px;
+        }
+        p {
+            margin-top: 15px;
+            font-size: 1.1em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Responsive Image Example</h1>
+
+    <div class="image-container">
+        <img src="https://play-lh.googleusercontent.com/U8BEZU3azFV8pHregifPhxdwJijadb2_H5nfWVH1HiL_EtGqQi4KLlh8JsFJLJ-sXA=w3840-h2160-rw" alt="A placeholder image demonstrating responsiveness">
+        <p>This image will scale down automatically to fit smaller screens while maintaining its aspect ratio. Try resizing your browser window to see it in action!</p>
+    </div>
+
+</body>
+</html>

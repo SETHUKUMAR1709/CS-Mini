@@ -1,4 +1,5 @@
 body {
+  background-color: var(--product-list-background);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -18,7 +19,9 @@ code {
     --secondary-gradient-start: #4CAF50; /* Signup page background */
     --secondary-gradient-end: #8BC34A;   /* Signup page background */
 
-    --card-background: #ffffff;
+    --product-list-background: #99f385; /* Light background for product list */
+
+    --card-background: #86e1f8;
     --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 
     --text-color-primary: #333333;
@@ -53,6 +56,8 @@ code {
 
 /* Dark Theme Variables */
 .app-dark {
+
+    --product-list-background: #36521f; /* Dark background for product list */
     --primary-gradient-start: #1a1a2e; /* Darker background */
     --primary-gradient-end: #16213e;
     --secondary-gradient-start: #2d3436; /* Darker green equivalent for signup */
