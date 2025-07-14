@@ -1,0 +1,129 @@
+
+.sellPageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - var(--navbar-height, 70px)); 
+    padding: 30px 20px;
+    background: linear-gradient(135deg, var(--secondary-gradient-start) 0%, var(--secondary-gradient-end) 100%); /* Uses theme variables */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+.sellCard {
+    background: var(--card-background); 
+    border-radius: 12px;
+    box-shadow: var(--card-shadow); 
+    width: 100%;
+    max-width: 600px; 
+    padding: 40px 30px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.sellCard:hover {
+    transform: translateY(-5px);
+}
+
+.title {
+    font-size: 2.2em;
+    color: var(--text-color-primary);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: var(--text-color-secondary);
+    margin-bottom: 30px;
+}
+
+.sellForm {
+    text-align: left;
+}
+
+.inputGroup {
+    margin-bottom: 20px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--label-color);
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.input {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 8px;
+    font-size: 1em;
+    color: var(--text-color-primary);
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.textarea {
+    resize: vertical; 
+    min-height: 80px;
+    padding-top: 10px; 
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--signup-button-background-start); 
+    box-shadow: 0 0 0 3px var(--input-focus-shadow-signup);
+}
+
+.imagePreview {
+    max-width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--input-border-color);
+    display: block;
+}
+
+.errorMessage {
+    color: var(--error-message-color);
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.successMessage {
+    color: #28a745; 
+    font-size: 0.9em;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.submitButton {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(45deg, var(--signup-button-background-start) 0%, var(--signup-button-background-end) 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.1s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.submitButton:hover {
+    background: linear-gradient(45deg, var(--signup-button-hover-start) 0%, var(--signup-button-hover-end) 100%);
+    transform: translateY(-2px);
+}
+
+.submitButton:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}

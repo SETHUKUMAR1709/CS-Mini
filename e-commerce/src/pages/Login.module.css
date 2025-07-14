@@ -75,11 +75,11 @@
 
 .passwordInputWrapper {
     position: relative;
-    width: 100%;
 }
 
 .passwordInputWrapper .input {
     padding-right: 40px;
+    width: calc(100% - 50px);
 }
 
 .passwordToggle {

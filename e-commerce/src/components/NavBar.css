@@ -74,6 +74,7 @@
     position: relative; /* For underline effect */
     transition: color 0.3s ease, transform 0.2s ease;
     padding: 5px 0; /* Add some vertical padding for hover area */
+    font-family: inherit;;
 }
 
 .navbar-links a:hover,
