@@ -40,7 +40,6 @@ const SignupPage = () => {
         setLoading(true);
         try {
             await register(username, email, password); // Call the register function from AuthContext
-            alert('Registration Successful! Please log in.');
             navigate('/login'); // Redirect to login page after successful registration
         } catch (err) {
             setError(err.message || 'An unexpected error occurred during registration.');

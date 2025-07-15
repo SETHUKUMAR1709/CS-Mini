@@ -38,6 +38,8 @@ const HomePage = () => {
         return {};
     });
 
+    console.log("cartItems in HomePage:", cartItems); // Debugging cartItems
+
     // Effect to update local storage when products state changes
     useEffect(() => {
         localStorage.setItem('eCommerceProducts', JSON.stringify(products));
@@ -67,15 +69,14 @@ const HomePage = () => {
 
     const handleAddToCart = useCallback((productId) => {
         if (!currentUser) {
-            alert('Please log in to add items to your cart.');
             return;
         }
         setCartItems(prevCartItems => {
             if (!prevCartItems[productId]) {
-                return {...prevCartItems, [productId]: 1};
+                return {...prevCartItems, [productId] : 1};
             }
             else{
-                return {...prevCartItems, [productId]: prevCartItems[productId] + 1}
+                return {...prevCartItems, [productId] : prevCartItems[productId] + 1}
             }    
         });
     }, [currentUser]);
@@ -87,9 +88,11 @@ const HomePage = () => {
                 if (updatedCart[productId] > 1) {
                     updatedCart[productId] -= 1;
                 } else {
+                    
                     delete updatedCart[productId];
                 }
             }
+            return updatedCart;
     });
     }, []);
 

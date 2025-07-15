@@ -27,7 +27,6 @@ const LoginPage = () => {
         setLoading(true);
         try {
             await login(email, password); // Call the login function from AuthContext
-            alert('Login Successful!');
             navigate('/home'); // Redirect to home page on success
         } catch (err) {
             setError(err.message || 'An unexpected error occurred during login.');

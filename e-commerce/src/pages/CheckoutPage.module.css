@@ -81,6 +81,13 @@
     font-weight: 600;
 }
 
+.itemQuantity {
+    font-size: 0.9em;
+    color: var(--text-color-secondary);
+    margin-bottom: 5px;
+    margin-right: 5px;
+}
+
 .itemPrice {
     font-size: 1em;
     color: var(--text-color-secondary);
