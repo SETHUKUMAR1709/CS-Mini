@@ -68,10 +68,11 @@
     display: flex;
     gap: 10px; /* Space between buttons */
     margin-top: auto; /* Push buttons to the bottom */
+    justify-content: space-evenly;;
 }
 
 .addToCart {
-    flex-grow: 1; /* Takes up available space */
+    width: fit-content;
     padding: 10px 15px;
     background-color: #007bff; /* Blue for add to cart */
     color: #fff;
@@ -112,6 +113,49 @@
     background-color: rgba(0, 0, 0, 0.05); /* Subtle background on hover */
     color: var(--link-color-login); /* Use a primary accent color for hover */
     transform: translateY(-2px);
+}
+
+.quantityControls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--input-border-color);
+    border-radius: 8px;
+    overflow: hidden; /* Ensures inner buttons respect border-radius */
+}
+
+.quantityButton {
+    background-color: var(--button-background-start); /* Use a primary button color */
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+.quantityButton:hover {
+    background-color: var(--button-hover-start);
+}
+
+.currentQuantity {
+    padding: 8px 12px;
+    font-size: 1em;
+    font-weight: 600;
+    color: var(--text-color-primary);
+    background-color: var(--card-background); 
+    text-align: center;
+    border-left: 1px solid var(--input-border-color);
+    border-right: 1px solid var(--input-border-color);
+}
+
+.addToCart.removeButton { /* This class is now less relevant for ProductCard */
+    background-color: #dc3545;
+}
+
+.addToCart.removeButton:hover {
+    background-color: #c82333;
 }
 
 .likeButton.liked {
