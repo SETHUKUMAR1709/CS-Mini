@@ -48,7 +48,7 @@ const handleSubmit = (e) => {
     reader.onloadend = () => {
         const imageDataUrl = reader.result;
 
-        const existingProductsString = localStorage.getItem('products');
+        const existingProductsString = localStorage.getItem('eCommerceProducts');
         let products = [];
         if (existingProductsString) {
             try {
@@ -70,7 +70,7 @@ const handleSubmit = (e) => {
         };
         console.log('New Product:', newProduct);
         products.push(newProduct);
-        localStorage.setItem('products', JSON.stringify(products));
+        localStorage.setItem('eCommerceProducts', JSON.stringify(products));
 
         setSuccessMessage('Product added successfully!');
         setProductName('');

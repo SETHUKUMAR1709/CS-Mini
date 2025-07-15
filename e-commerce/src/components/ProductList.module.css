@@ -1,9 +1,17 @@
-.product-list-container {
+.productList {
      background-color: var(--product-list-background);
      height: 100%; /* Full viewport height */
 }
 
-.product-grid{
+.listTitle {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Space below the title */
+    text-align: center; /* Center the title */
+    color: var(--text-color-primary); /* Use the variable for text color */
+}
+
+.productGrid{
     background-color: var(--product-list-background); /* Use the variable for background color */
     display: flex;
     flex: row;

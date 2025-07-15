@@ -134,3 +134,10 @@
     align-self: center; /* Center align with icon */
 }
 
+.productDetails{
+    flex-grow: 1; /* Takes up available space */
+    text-align: left; /* Align text to the left */
+    display: flex;
+    flex-direction: column; /* Stack name, description, and price vertically */
+    justify-content: space-between; /* Space out elements */
+}

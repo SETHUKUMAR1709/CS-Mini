@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import styles from './Signup.module.css'; // Import the CSS Module
+import styles from './Signup.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { Link, Navigate } from 'react-router-dom'; // For linking to login page
-import { useAuth } from '../contexts/AuthContext'; // Import the Auth context
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useAuth } from '../contexts/AuthContext'; // Import useAuth
 
 const SignupPage = () => {
     const [username, setUsername] = useState('');
@@ -14,14 +14,14 @@ const SignupPage = () => {
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
-    const {signup} = useAuth(); 
+
+    const navigate = useNavigate();
+    const { register } = useAuth(); // Get the register function from AuthContext
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError(''); // Clear previous errors
-        
+        setError('');
 
-        // Basic client-side validation
         if (!username || !email || !password || !confirmPassword) {
             setError('Please fill in all fields.');
             return;
@@ -38,14 +38,12 @@ const SignupPage = () => {
         }
 
         setLoading(true);
-        // Simulate an API call for registration
         try {
-            console.log('Attempting to register with:', { username, email, password });
-            signup({ username, email, password });
-            Navigate('/home');
-            // Navigate('/login'); // Redirect to login page after successful registration
+            await register(username, email, password); // Call the register function from AuthContext
+            alert('Registration Successful! Please log in.');
+            navigate('/login'); // Redirect to login page after successful registration
         } catch (err) {
-            setError('An error occurred during registration. Please try again.');
+            setError(err.message || 'An unexpected error occurred during registration.');
             console.error('Registration error:', err);
         } finally {
             setLoading(false);

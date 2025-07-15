@@ -1,17 +1,24 @@
 import React from "react";
 import ProductCard from "./ProductCard";
-import './ProductList.css'; // Import your CSS file for styling
+import styles from './ProductList.module.css';
 
-const ProductList = ({ products, onLikeToggle }) => {
-
-    
-    console.log("ProductList component rendered with products:", products);
-    return (
-        <div className="product-list-container">
-            <div className="product-grid">
+const ProductList = ({ products, onLikeToggle, onAddToCart, onRemoveFromCart, cartItems }) => {
+    return(
+        <div className={styles.productList}>
+            {console.log("Rendering ProductList with products:", products)}
+            <h2 className={styles.listTitle}>Explore</h2>
+            <div className={styles.productGrid}>
                 {
-                    products.map((product, index) => (
-                        <ProductCard product={product} key={index} onLikeToggle={onLikeToggle} />
+                    products.map((product) => (
+                        <ProductCard
+                            product={product}
+                            key={product.id}
+                            onLikeToggle={onLikeToggle}
+                            onAddToCart={onAddToCart}
+                            onRemoveFromCart={onRemoveFromCart}
+                            cartItems={cartItems}
+                            isAddedToCart={cartItems[product.id] > 0}
+                        />
                     ))
                 }
             </div>

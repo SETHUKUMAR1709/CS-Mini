@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
-import styles from './Login.module.css'; // Import the CSS Module
+import styles from './Login.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { Link} from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext'; // Import the Auth context
-import { useNavigate } from 'react-router-dom'; // For navigation after login
+import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext'; // Import useAuth
 
 const LoginPage = () => {
-    const navigate = useNavigate(); // Use useNavigate for programmatic navigation
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState('');
-    const [loading, setLoading] = useState(false); // For simulating API call
-    const { login } = useAuth(); // Import the login function from your Auth context
+    const [loading, setLoading] = useState(false);
+
+    const navigate = useNavigate();
+    const { login } = useAuth(); // Get the login function from AuthContext
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError(''); // Clear previous errors
+        setError('');
 
         if (!email || !password) {
             setError('Please enter both email and password.');
@@ -25,15 +25,12 @@ const LoginPage = () => {
         }
 
         setLoading(true);
-        // Simulate an API call
         try {
-            // Replace with your actual authentication logic (e.g., fetch, axios)
-            login({ email, password });
-            navigate('/home'); // Redirect to home page after successful login
-                // Redirect user or set global authentication state
-            
+            await login(email, password); // Call the login function from AuthContext
+            alert('Login Successful!');
+            navigate('/home'); // Redirect to home page on success
         } catch (err) {
-            setError('An error occurred during login. Please try again.');
+            setError(err.message || 'An unexpected error occurred during login.');
             console.error('Login error:', err);
         } finally {
             setLoading(false);
@@ -97,7 +94,7 @@ const LoginPage = () => {
                 </form>
 
                 <div className={styles.footerLinks}>
-                     Don't have an account?
+                    <Link to="#" className={styles.link}>Forgot Password?</Link>
                     <span> &bull; </span>
                     <Link to="/register" className={styles.link}>Sign Up</Link>
                 </div>
