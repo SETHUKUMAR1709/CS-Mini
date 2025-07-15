@@ -1,0 +1,156 @@
+/* src/pages/ProfilePage.module.css */
+
+.profilePageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top */
+    min-height: calc(100vh - var(--navbar-height, 70px)); /* Adjust for navbar */
+    padding: 30px 20px;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); /* Example gradient, match your theme */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Reusing general card styles from login/signup for consistency */
+.profileCard {
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    padding: 40px;
+    width: 100%;
+    max-width: 800px; /* Wider card to accommodate listed products */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.profileCard:hover {
+    transform: translateY(-5px);
+}
+
+.title {
+    font-size: 2.2em;
+    color: var(--text-color-primary);
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: var(--text-color-secondary);
+    margin-bottom: 30px;
+}
+
+.profileInfo {
+    text-align: left;
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 8px;
+    background-color: var(--background-color-body); /* Slightly different background */
+}
+
+.profileInfo p {
+    font-size: 1.1em;
+    color: var(--text-color-primary);
+    margin-bottom: 10px;
+}
+
+.profileInfo p strong {
+    color: var(--label-color);
+}
+
+.sectionTitle {
+    font-size: 1.8em;
+    color: var(--text-color-primary);
+    margin-top: 30px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    border-bottom: 2px solid var(--input-border-color);
+    padding-bottom: 10px;
+}
+
+.noProductsMessage {
+    font-size: 1.1em;
+    color: var(--text-color-secondary);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* Reusing product-grid styles for listed products, adjust if needed */
+.listedProductsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 10px 0; /* Adjust padding */
+    justify-content: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .profileCard {
+        padding: 30px 20px;
+        max-width: 95%;
+    }
+    .profileInfo {
+        padding: 15px;
+    }
+    .sectionTitle {
+        font-size: 1.5em;
+    }
+    .listedProductsGrid {
+        gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .listedProductsGrid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+}
+
+.profilePictureContainer {
+    width: 100px; /* Desired size of the circle */
+    height: 100px;
+    border-radius: 50%; /* Makes it a circle */
+    background-color: var(--primary-color); /* A nice background color, e.g., blue */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -70px auto 30px auto; /* Adjust margin to place it above the card and center */
+    box-shadow: 0 0 0 5px var(--card-background), 0 4px 10px rgba(0, 0, 0, 0.2); /* White border, then shadow */
+    transition: transform 0.3s ease-in-out;
+}
+
+.profilePictureContainer:hover {
+    transform: scale(1.05);
+}
+
+.profileLetter {
+    font-size: 3.5em; /* Size of the letter */
+    font-weight: 700;
+    color: #fff; /* White letter color */
+    text-transform: uppercase;
+}
+
+/* Adjust the .profileCard margin-top so the image overlaps nicely */
+.profileCard {
+    margin-top: 100px; /* Push the card down to make space for the overlapping image */
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--card-shadow);
+    padding: 40px;
+    padding-top: 70px; /* Add extra top padding to prevent content overlap with image */
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.title {
+    font-size: 2.2em;
+    color: var(--text-color-primary);
+    margin-bottom: 25px; /* Adjust as needed */
+    margin-top: 15px; /* Added/adjusted margin-top to separate from image */
+    font-weight: 700;
+}
