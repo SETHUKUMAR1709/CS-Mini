@@ -1,70 +1,124 @@
-# Getting Started with Create React App
+# ⛅ Weather Tell
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A responsive weather forecast web application built with **React** and styled using **Semantic UI**.
+The app fetches real-time weather data from the **Open-Meteo API** based on the user’s location or a selected location.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+* **Current Weather** – Shows temperature, wind speed/direction, sunrise, sunset, and more
+* **Multi-Day Forecast** – Displays max/min temperatures, precipitation, and weather codes for multiple days
+* **Day/Night Mode** – Detects current time to adjust theme accordingly
+* **Location Support** – Uses latitude & longitude to fetch accurate forecasts
+* **Responsive UI** – Styled with **Semantic UI React** for a clean, mobile-friendly design
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+**Frontend:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* React 19
+* Semantic UI React & Semantic UI CSS
 
-### `npm run build`
+**API & Networking:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Axios
+* [Open-Meteo API](https://open-meteo.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Testing:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* React Testing Library
+* Jest DOM
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📂 Folder Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+weather-tell/
+├── public/                # Static files
+├── src/
+│   ├── components/        # UI components
+│   ├── utils/             # API calls and helper functions
+│   ├── App.js             # Main app component
+│   └── index.js           # React DOM rendering
+├── package.json
+└── README.md
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## ⚙️ Installation & Setup
 
-## Learn More
+1. **Clone the repository**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/CS-Mini.git
+   cd CS-Mini/weather-tell
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **Install dependencies**
 
-### Code Splitting
+   ```bash
+   npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. **Run the app**
 
-### Analyzing the Bundle Size
+   ```bash
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+4. **Build for production**
 
-### Making a Progressive Web App
+   ```bash
+   npm run build
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🌤️ API Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+This project uses the **Open-Meteo API**, which is free and does not require an API key.
+The core API call looks like:
 
-### Deployment
+```javascript
+const URL = 'https://api.open-meteo.com/v1/forecast';
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Axios.get(URL, {
+  params: {
+    latitude,
+    longitude,
+    current_weather: true,
+    timeZone: 'Asia/Kolkata',
+    daily: [
+      'temperature_2m_max',
+      'temperature_2m_min',
+      'weathercode',
+      'precipitation_sum',
+      'windspeed_10m_max',
+      'winddirection_10m_dominant',
+      'sunrise',
+      'sunset'
+    ],
+    start_date: 'YYYY-MM-DD',
+    end_date: 'YYYY-MM-DD'
+  }
+});
+```
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📜 License
+
+This project is licensed under the MIT License – free to use and modify.
+
+---
+
+## 🙌 Acknowledgements
+
+* [React](https://reactjs.org/)
+* [Semantic UI React](https://react.semantic-ui.com/)
+* [Open-Meteo API](https://open-meteo.com/)
