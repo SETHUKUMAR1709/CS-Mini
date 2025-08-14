@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# 🛒 E-Commerce Web App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive **React**-based e-commerce application that stores user data and cart details in **LocalStorage**.
+The app features product listings, a shopping cart, and basic user authentication — all without a backend server.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+* **Responsive Design** – Works on desktop, tablet, and mobile
+* **Product Catalog** – Browse and view product details
+* **Shopping Cart** – Add, remove, and update quantities
+* **LocalStorage-Based Persistence** – Cart items and user sessions are saved in the browser
+* **User Authentication (Local)** – Sign up, log in, and stay signed in using LocalStorage
+* **Routing** – Smooth navigation using `react-router-dom`
+* **Modern UI** – Clean layout with **FontAwesome** and **Lucide Icons**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+**Frontend:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* React 19
+* React Router DOM
+* FontAwesome / Lucide Icons
 
-### `npm run build`
+**Storage & State Management:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Browser LocalStorage
+* React state hooks
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Testing:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* React Testing Library
+* Jest DOM
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 📂 Folder Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+e-commerce/
+├── public/                # Static files
+├── src/
+│   ├── components/        # Reusable UI components
+│   ├── pages/             # Page-level components (Home, Cart, Login, etc.)
+│   ├── utils/             # LocalStorage helpers and utility functions
+│   ├── App.js             # Main app component
+│   └── index.js           # React DOM rendering
+├── package.json
+└── README.md
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## ⚙️ Installation & Setup
 
-## Learn More
+1. **Clone the repository**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/CS-Mini.git
+   cd CS-Mini/e-commerce
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. **Install dependencies**
 
-### Code Splitting
+   ```bash
+   npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. **Run the app**
 
-### Analyzing the Bundle Size
+   ```bash
+   npm start
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+4. **Build for production**
 
-### Making a Progressive Web App
+   ```bash
+   npm run build
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🧪 Running Tests
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+npm test
+```
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## 📜 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License – free to use and modify.
+
+---
+
+## 🙌 Acknowledgements
+
+* [React](https://reactjs.org/)
+* [FontAwesome](https://fontawesome.com/)
+* [Lucide Icons](https://lucide.dev/)
