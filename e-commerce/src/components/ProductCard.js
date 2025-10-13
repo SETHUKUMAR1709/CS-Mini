@@ -31,14 +31,21 @@ const ProductCard = ({ product, onLikeToggle, onAddToCart, onRemoveFromCart, qua
 
     return (
         <div className={styles.productCard}>
-            <img src={product.image} alt={product.name} className={styles.productImage} />
-            <div>
-                <div className={styles.productDetails}>
-                    <h3 className={styles.productName}>{product.name}</h3>
-                    <p className={styles.productDescription}>{product.description || 'No description available.'}</p>
-                    <span className={styles.productPrice}>${parseFloat(product.price).toFixed(2)}</span>
+            <div className={styles.header}>
+                <div className={styles.imageContainer}>
+                    <img src={product.image} alt={product.name} className={styles.productImage} />
                 </div>
                 <div className={styles.actions}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row'}}>
+                        <span className={styles.productPrice}>${parseFloat(product.price).toFixed(2)}</span>
+                        <button
+                            className={`${styles.likeButton} ${liked ? styles.liked : ''}`}
+                            onClick={handleLikeClick}
+                            aria-label={liked ? 'Unlike product' : 'Like product'}
+                        >
+                            <FontAwesomeIcon icon={liked ? faHeartSolid : faHeartRegular} />
+                        </button>
+                    </div>
                     {quantityInCart > 0 ? (
                         <div className={styles.quantityControls}>
                             <button className={styles.quantityButton} onClick={handleDecrementClick}>-</button>
@@ -50,16 +57,17 @@ const ProductCard = ({ product, onLikeToggle, onAddToCart, onRemoveFromCart, qua
                             Add to Cart
                         </button>
                     )}
-                    <button
-                        className={`${styles.likeButton} ${liked ? styles.liked : ''}`}
-                        onClick={handleLikeClick}
-                        aria-label={liked ? 'Unlike product' : 'Like product'}
-                    >
-                        <FontAwesomeIcon icon={liked ? faHeartSolid : faHeartRegular} />
-                    </button>
                 </div>
             </div>
+
+
+            <div className={styles.productDetails}>
+                <h3 className={styles.productName}>{product.name}</h3>
+                <p className={styles.productDescription}>{product.description || 'No description available.'}</p>
+            </div>
+
         </div>
+
     );
 };
 

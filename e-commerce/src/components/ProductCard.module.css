@@ -1,74 +1,84 @@
 /* src/components/ProductCard.module.css */
 
 .productCard {
-    background-color: var(--card-background); /* From global theme variables */
+    background-color: var(--card-background);
     border-radius: 12px;
-    box-shadow: var(--card-shadow); /* From global theme variables */
+    box-shadow: var(--card-shadow); 
     padding: 20px;
     margin: 15px;
     text-align: center;
     transition: transform 0.2s ease-in-out, background-color 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: row;
-    overflow: hidden; /* Ensures rounded corners on image */
-    position: relative; /* For potential badges/overlays */
-    width: fit-content; /* Adjusts width based on content */
-    height: fit-content; /* Adjusts height based on content */
+    flex-wrap: wrap;   
+    position: relative; 
+    width: 280px;
+    flex-shrink: 0;
 
 }
 
 .productCard:hover {
     
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); 
+}
+
+.imageContainer {
+    width: 100%; 
+    border-radius: 8px; 
 }
 
 .productImage {
-    margin-right: 10px;
-    max-width: 100%;
-    height: 200px; /* Fixed height for image consistency */
-    object-fit: contain; /* Ensures entire image is visible, no cropping */
-    border-radius: 8px; /* Slightly rounded corners for image */
-    margin-bottom: 15px;
+    width: 80%;
+    height: 80%; 
+    object-fit: contain; 
+    border-radius: 8px; 
     transition: transform 0.3s ease;
 }
 
 .productCard:hover .productImage {
-    transform: scale(1.03); /* Slight zoom on image hover */
+    transform: scale(1.03); 
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .productName {
     font-size: 1.5em;
-    color: var(--text-color-primary); /* From global theme variables */
-    margin-bottom: 10px;
+    color: var(--text-color-primary); 
+    margin: 4px 0px;
     font-weight: 600;
-    white-space: nowrap; /* Prevents wrapping */
-    overflow: hidden; /* Hides overflowed text */
-    text-overflow: ellipsis; /* Adds ellipsis for overflowed text */
+    flex-wrap: wrap;  
 }
 
 .productDescription {
     font-size: 0.9em;
-    color: var(--text-color-secondary); /* From global theme variables */
-    margin-bottom: 15px;
-    height: 40px; /* Fixed height for description for layout consistency */
-    overflow: hidden;
+    color: var(--text-color-secondary);
+    height: 40px; 
+    flex-wrap: wrap;   
     
 }
 
 .productPrice {
     font-size: 1.3em;
     font-weight: 700;
-    color: var(--text-color-primary); /* From global theme variables */
-    margin-bottom: 20px;
-    display: block; /* Ensures it takes full width */
+    color: var(--text-color-primary);
+    display: block;
+    align-items: center;
+    margin: auto 4px auto auto;
 }
 
 .actions {
     display: flex;
-    gap: 10px; /* Space between buttons */
-    margin-top: auto; /* Push buttons to the bottom */
-    justify-content: space-evenly;;
+    flex-direction: column;
+    gap: 10px; 
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 .addToCart {
@@ -95,23 +105,23 @@
 }
 
 .likeButton {
-    background-color: transparent; /* Transparent by default */
-    border: 1px solid var(--input-border-color); /* Light border */
-    color: var(--text-color-secondary); /* Default icon color */
+    background-color: transparent; 
+    border: 1px solid var(--input-border-color); 
+    color: var(--text-color-secondary); 
     padding: 10px 12px;
     border-radius: 8px;
     font-size: 1.1em;
     cursor: pointer;
     transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, transform 0.1s ease;
-    display: flex; /* For icon and potential text/count alignment */
+    display: flex; 
     align-items: center;
     justify-content: center;
-    gap: 5px; /* Space between icon and count */
+    gap: 5px; 
 }
 
 .likeButton:hover {
-    background-color: rgba(0, 0, 0, 0.05); /* Subtle background on hover */
-    color: var(--link-color-login); /* Use a primary accent color for hover */
+    background-color: rgba(0, 0, 0, 0.05); 
+    color: var(--link-color-login);
     transform: translateY(-2px);
 }
 
@@ -121,18 +131,18 @@
     justify-content: center;
     border: 1px solid var(--input-border-color);
     border-radius: 8px;
-    overflow: hidden; /* Ensures inner buttons respect border-radius */
+    overflow: hidden; 
 }
 
 .quantityButton {
-    background-color: var(--button-background-start); /* Use a primary button color */
+    background-color: var(--button-background-start); 
     color: #fff;
     border: none;
     padding: 8px 12px;
     font-size: 1.1em;
     cursor: pointer;
     transition: background-color 0.2s ease;
-    flex-shrink: 0; /* Prevent buttons from shrinking */
+    flex-shrink: 0;
 }
 
 .quantityButton:hover {
@@ -150,7 +160,7 @@
     border-right: 1px solid var(--input-border-color);
 }
 
-.addToCart.removeButton { /* This class is now less relevant for ProductCard */
+.addToCart.removeButton { 
     background-color: #dc3545;
 }
 
@@ -160,28 +170,41 @@
 
 .likeButton.liked {
     background: transparent;
-    color: #e74c3c; /* Red for liked state */
-    /* background-color: rgba(231, 76, 60, 0.1); Light red background for liked */
-    /* border-color: #e74c3c; */
+    color: #e74c3c; 
 }
 
 .likeButton.liked:hover {
     background-color: rgba(231, 76, 60, 0.2);
-    color: #c0392b; /* Darker red on hover when liked */
+    color: #c0392b; 
 }
 
-/* Optional: Styling for a like count span if you uncomment it in JS */
 .likeCount {
     font-size: 1em;
-    color: var(--text-color-secondary); /* From global theme variables */
+    color: var(--text-color-secondary); 
     margin-left: 5px;
-    align-self: center; /* Center align with icon */
+    align-self: center; 
 }
 
 .productDetails{
-    flex-grow: 1; /* Takes up available space */
-    text-align: left; /* Align text to the left */
+    flex-grow: 1;
+    text-align: left; 
     display: flex;
-    flex-direction: column; /* Stack name, description, and price vertically */
-    justify-content: space-between; /* Space out elements */
+    flex-direction: column;
+    flex-wrap: wrap;   
+}
+
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.productCard {
+  animation: fadeInUp 0.4s ease both;
 }

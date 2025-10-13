@@ -12,7 +12,7 @@
 }
 
 .checkoutCard {
-    background: var(--card-background);
+    background: linear-gradient(135deg, var(--checkout-page-gradient-start) 0%, var(--checkout-page-gradient-end) 100%);;
     border-radius: 12px;
     box-shadow: var(--card-shadow);
     padding: 40px;

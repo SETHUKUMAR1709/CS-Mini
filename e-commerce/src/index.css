@@ -14,14 +14,17 @@ code {
 }
 
 .app-light {
-    --primary-gradient-start: #6a11cb; /* Login page background */
-    --primary-gradient-end: #2575fc;   /* Login page background */
-    --secondary-gradient-start: #4CAF50; /* Signup page background */
-    --secondary-gradient-end: #8BC34A;   /* Signup page background */
+    --primary-gradient-start: #6a11cb; 
+    --primary-gradient-end: #2575fc;   
+    --secondary-gradient-start: #3b953e; 
+    --secondary-gradient-end: #a9e465;  
+    --checkout-page-gradient-start: #cfc5b2;
+    --checkout-page-gradient-end: #624f88;
 
-    --product-list-background: #99f385; /* Light background for product list */
+    --product-list-background: #efffeb; 
+    --signup-page-background: #daf1d0;
 
-    --card-background: #86e1f8;
+    --card-background: #e1e1e1;
     --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 
     --text-color-primary: #333333;
@@ -57,13 +60,16 @@ code {
 /* Dark Theme Variables */
 .app-dark {
 
-    --product-list-background: #36521f; /* Dark background for product list */
+    --product-list-background: #353c30; /* Dark background for product list */
     --primary-gradient-start: #1a1a2e; /* Darker background */
     --primary-gradient-end: #16213e;
     --secondary-gradient-start: #2d3436; /* Darker green equivalent for signup */
     --secondary-gradient-end: #1a202c;
+     --signup-page-background: #2a2424;
+     --checkout-page-gradient-start: #624f88;
+     --checkout-page-gradient-end: #73716d;
 
-    --card-background: #2c3e50; /* Darker card background */
+    --card-background: #4a4a4a; /* Darker card background */
     --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 
     --text-color-primary: #f0f0f0;

@@ -26,9 +26,6 @@ const HomePage = () => {
             { id: 1, name: 'Product 1 - Elegant Boat', description: 'A sleek boat for your next adventure.', price: '10.00', image: require('../assets/boat1.jpeg'), likes: 0 },
             { id: 2, name: 'Product 2 - Adventure Boat', description: 'Perfect for fishing and exploration.', price: '20.00', image: require('../assets/boat0.jpeg'), likes: 0 },
             { id: 3, name: 'Product 3 - Wireless Earbuds', description: 'High-quality sound with active noise cancellation.', price: '30.00', image: require('../assets/airpods.jpeg'), likes: 0 },
-            { id: 4, name: 'Smart Watch', description: 'Track your fitness and stay connected.', price: '50.00', image: 'https://via.placeholder.com/200x200/FF0000/FFFFFF?text=Smart+Watch', likes: 0 },
-            { id: 5, name: 'Gaming Mouse', description: 'Precision gaming mouse for competitive play.', price: '25.00', image: 'https://via.placeholder.com/200x200/0000FF/FFFFFF?text=Gaming+Mouse', likes: 0 },
-            { id: 6, name: 'Bluetooth Speaker', description: 'Portable speaker with rich bass.', price: '40.00', image: 'https://via.placeholder.com/200x200/008000/FFFFFF?text=Bluetooth+Speaker', likes: 0 },
         ];
     });
 
