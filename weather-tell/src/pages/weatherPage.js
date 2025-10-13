@@ -38,7 +38,7 @@ function WeatherPage() {
         console.log(weekData);
         return (
             <>
-            <div className={`comp${!isDay ? 'dark' : ''}`} style={{paddingTop: '20px'}}>
+            <div className={`comp${!isDay ? 'dark' : ''} w-full `} >
                 <h2>Weather-Info</h2>
                 <button
                     className="ui primary button"
@@ -48,7 +48,7 @@ function WeatherPage() {
                     {iscelcius ? '°C' : '°F'}
                 </button>
                 <TodayWeather iscelcius={iscelcius} weather={currentWeather} />
-                <div className={`table ${!isDay ? 'dark' : ''}`} style={{ marginTop: '20px' }}>
+                <div className={`table ${!isDay ? 'dark' : ''} w-full`} style={{ marginTop: '20px' }}>
                     <table className={`table ${!isDay ? 'dark' : ''}`} >
                         <thead className={`${!isDay ? 'dark' : ''}`}>
                             <tr>
