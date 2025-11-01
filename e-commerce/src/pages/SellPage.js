@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styles from './SellPage.module.css';
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext'; // Import useAuth to get current user
+import { useAuth } from '../contexts/AuthContext';
 
 const SellPage = () => {
     const [productName, setProductName] = useState('');
@@ -12,7 +11,6 @@ const SellPage = () => {
     const [error, setError] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
 
-    const navigate = useNavigate();
     const { currentUser } = useAuth(); // Get the current logged-in user
 
     const handleImageChange = (e) => {

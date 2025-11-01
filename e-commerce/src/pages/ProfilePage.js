@@ -4,7 +4,7 @@ import styles from './ProfilePage.module.css';
 import ProductCard from '../components/ProductCard';
 
 const ProfilePage = () => {
-    const { currentUser, logout } = useAuth(); // Assuming logout is available if needed, though not used directly for display
+    const { currentUser, } = useAuth(); // Assuming logout is available if needed, though not used directly for display
     const [myListedProducts, setMyListedProducts] = useState([]);
 
     useEffect(() => {
